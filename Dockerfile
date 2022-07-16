@@ -1,16 +1,10 @@
-# Ultroid - UserBot
-# Copyright (C) 2021 TeamUltroid
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
-
-FROM theteamultroid/ultroid:main
+FROM  python:latest
 
 ENV TZ=Asia/Kolkata
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && apt-get update && apt upgrade -y && apt install ffmpeg mediainfo neofetch -y
 
 COPY . .
 
-RUN ./Beauty
-WORKDIR root/TeamUltroid
+RUN chmod u+x chandni
 
-CMD ./START
+CMD ["./chandni"]

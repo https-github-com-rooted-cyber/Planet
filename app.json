@@ -27,11 +27,22 @@
         },
         "REDIS_URI": {
             "description": "Redis endpoint URL, from redislabs.com",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "REDIS_PASSWORD": {
             "description": "Redis endpoint password, from redislabs.com",
-            "value": ""
+            "value": "",
+            "required": false
+        },
+        "BRANCH": {
+            "description":"Branch to deploy",
+            "value": "main"
+        },
+        "MONGO_URI": {
+            "description": "for Mongo DB",
+            "value": "",
+            "required": false
         },
         "HEROKU_API": {
             "description": "Heroku API token. Needed if deploying on heroku ONLY.",
@@ -45,7 +56,7 @@
         }
     },
     "formation": {
-        "ult": {
+        "worker": {
             "quantity": 1,
             "size": "free"
         }
